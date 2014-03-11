@@ -1,0 +1,21 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: unlucky4ever
+website: ${project.url}
+
+main: ${mainClass}
+
+commands:
+  cjm:
+    description: Basic commands for CustomJoinMessage
+    usage: |
+           /<command> - Basic commands for CustomJoinMessage
+
+permissions:
+  cjm.admin:
+    description: Notifies the player when CustomJoinMessage is in need of an update.
+    default: op
+  cjm.reload:
+    description: Allows the player to reload the config.yml
+    default: op

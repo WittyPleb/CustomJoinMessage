@@ -1,0 +1,198 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Project information -->
+	<groupId>com.unlucky4ever.customjoinmessage</groupId>
+	<artifactId>CustomJoinMessage</artifactId>
+	<version>1.6.0</version>
+	<name>CustomJoinMessage</name>
+	<url>http://dev.bukkit.org/server-mods/customjoinmessage/</url>
+	<description>Allows you to set custom message for when a use leaves/joins or gets kicked, also allows you to disable them as well.</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<bukkitVersion>1.7.2-R0.3</bukkitVersion>
+		<vaultVersion>1.2.30</vaultVersion>
+		<mainClass>com.unlucky4ever.customjoinmessage.CustomJoinMessage</mainClass>
+	</properties>
+
+	<!-- Organization -->
+	<organization>
+		<name>Unlucky4ever</name>
+		<url>https://github.com/unlucky4ever/CustomJoinMessage</url>
+	</organization>
+
+	<scm>
+		<url>https://github.com/unlucky4ever/CustomJoinMessage</url>
+		<connection>scm:git:git://github.com/unlucky4ever/CustomJoinMessage.git</connection>
+		<developerConnection>scm:git:git@github.com:unlucky4ever/CustomJoinMessage.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/unlucky4ever/CustomJoinMessage/issues</url>
+	</issueManagement>
+
+	<repositories>
+		<repository>
+			<id>bukkit-repo</id>
+			<url>http://repo.bukkit.org/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>vault-repo</id>
+			<url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>autoincrement-versions-maven-plugin</id>
+			<name>autoincrement-versions-maven-plugin</name>
+			<url>http://autoincrement-versions-maven-plugin.googlecode.com/svn/repo</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
+			<version>${bukkitVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.milkbowl.vault</groupId>
+			<artifactId>Vault</artifactId>
+			<version>${vaultVersion}</version>
+		</dependency>
+		<!-- Test Dependency -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<defaultGoal>clean install</defaultGoal>
+		<sourceDirectory>src/</sourceDirectory>
+		<testSourceDirectory>test/</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>${project.basedir}</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>plugin.yml</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<show>public</show>
+					<windowtitle>Vault</windowtitle>
+					<verbose>false</verbose>
+					<author>true</author>
+					<version>true</version>
+					<linksource>true</linksource>
+					<excludePackageNames>net.milkbowl.vault.chat.plugin:net.milkbowl.vault.economy.plugin:net.milkbowl.vault.permission.plugin</excludePackageNames>
+					<bottom><![CDATA[<b>unlucky4ever, 2014</b>]]></bottom>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>autoincrement-versions-maven-plugin</artifactId>
+				<version>2.0-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<id>update-pom-versions</id>
+						<goals>
+							<goal>increment</goal>
+							<goal>commit</goal>
+						</goals>
+						<phase>compile</phase>
+						<configuration>
+							<autoIncrementVersion>true</autoIncrementVersion>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehause.mojo
+										</groupId>
+										<artifactId>
+											autoincrement-versions-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.0-SNAPSHOT,)
+										</versionRange>
+										<goals>
+											<goal>commit</goal>
+											<goal>increment</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											autoincrement-versions-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.0-SNAPSHOT,)
+										</versionRange>
+										<goals>
+											<goal>commit</goal>
+											<goal>increment</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
