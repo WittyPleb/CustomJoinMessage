@@ -18,9 +18,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
+import org.mcstats.Metrics;
 
 import com.unlucky4ever.customjoinmessage.listeners.PlayerListener;
-import com.unlucky4ever.customjoinmessage.metrics.Metrics;
 
 public class CustomJoinMessage extends JavaPlugin {
 	private static Logger log;
@@ -55,9 +55,9 @@ public class CustomJoinMessage extends JavaPlugin {
 		getConfig().addDefault("custom.default.join-message", "%p has joined.");
 		getConfig().addDefault("custom.default.leave-message", "%p has left.");
 		getConfig().addDefault("custom.default.kick-message", "%p was kicked");
-		getConfig().addDefault("custom.users.unlucky4ever.join-message", "%p has joined.");
-		getConfig().addDefault("custom.users.unlucky4ever.leave-message", "%p has left.");
-		getConfig().addDefault("custom.users.unlucky4ever.kick-message", "%p was kicked");
+		getConfig().addDefault("custom.users.8f2d51db-6818-4016-b06a-0d0df5fd4d7e.join-message", "%p has joined.");
+		getConfig().addDefault("custom.users.8f2d51db-6818-4016-b06a-0d0df5fd4d7e.leave-message", "%p has left.");
+		getConfig().addDefault("custom.users.8f2d51db-6818-4016-b06a-0d0df5fd4d7e.kick-message", "%p was kicked");
 		getConfig().addDefault("custom.groups.admin.join-message", "%p has joined.");
 		getConfig().addDefault("custom.groups.admin.leave-message", "%p has left.");
 		getConfig().addDefault("custom.groups.admin.kick-message", "%p was kicked");
