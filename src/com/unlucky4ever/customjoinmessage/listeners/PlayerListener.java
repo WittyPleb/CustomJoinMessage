@@ -36,11 +36,11 @@ public class PlayerListener implements Listener {
 		
 		if (plugin.getConfig().getBoolean("disable-join-message", true)) {
 			event.setJoinMessage(null);
-		} else if (plugin.getConfig().getString("custom.users." + event.getPlayer().getName() + ".join-message") != null) {
+		} else if (plugin.getConfig().getString("custom.users." + event.getPlayer().getUniqueId() + ".join-message") != null) {
 			event.setJoinMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.users." + event.getPlayer().getName() + ".join-message").replace("%p", event.getPlayer().getName())));
 		} else if (plugin.getConfig().getBoolean("use-groups", true)) {
 			if (plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".join-message") != null) {
-				event.setJoinMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".join-message")));
+				event.setJoinMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".join-message").replace("%p", event.getPlayer().getName())));
 			}
 		} else {
 			event.setJoinMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.default.join-message").replace("%p", event.getPlayer().getName())));
@@ -51,11 +51,11 @@ public class PlayerListener implements Listener {
 	public void onPlayerQuit(PlayerQuitEvent event) {
 		if (plugin.getConfig().getBoolean("disable-leave-message", true)) {
 			event.setQuitMessage(null);
-		} else if (plugin.getConfig().getString("custom.users." + event.getPlayer().getName() + ".leave-message") != null) {
+		} else if (plugin.getConfig().getString("custom.users." + event.getPlayer().getUniqueId() + ".leave-message") != null) {
 			event.setQuitMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.users." + event.getPlayer().getName() + ".leave-message").replace("%p", event.getPlayer().getName())));
 		} else if (plugin.getConfig().getBoolean("use-groups", true)) {
 			if (plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".leave-message") != null) {
-				event.setQuitMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".leave-message")));
+				event.setQuitMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".leave-message").replace("%p", event.getPlayer().getName())));
 			}
 		} else {
 			event.setQuitMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.default.leave-message").replace("%p", event.getPlayer().getName())));
@@ -66,11 +66,11 @@ public class PlayerListener implements Listener {
 	public void onPlayerKick(PlayerKickEvent event) {
 		if (plugin.getConfig().getBoolean("disable-kick-message", true)) {
 			event.setLeaveMessage(null);
-		} else if (plugin.getConfig().getString("custom.users." + event.getPlayer().getName() + ".kick-message") != null) {
+		} else if (plugin.getConfig().getString("custom.users." + event.getPlayer().getUniqueId() + ".kick-message") != null) {
 			event.setLeaveMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.users." + event.getPlayer().getName() + ".kick-message").replace("%p", event.getPlayer().getName())));
 		} else if (plugin.getConfig().getBoolean("use-groups", true)) {
 			if (plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".kick-message") != null) {
-				event.setLeaveMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".kick-message")));
+				event.setLeaveMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.groups." + CustomJoinMessage.perms.getPrimaryGroup(event.getPlayer()) + ".kick-message").replace("%p", event.getPlayer().getName())));
 			}
 		} else {
 			event.setLeaveMessage(TextUtil.colorizeText(plugin.getConfig().getString("custom.default.kick-message").replace("%p", event.getPlayer().getName())));
