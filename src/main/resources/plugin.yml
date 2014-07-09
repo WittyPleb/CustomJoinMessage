@@ -1,10 +1,10 @@
 name: ${project.name}
 version: ${project.version}
-description: ${project.description}
+description: Allows you to set custom message for when a use leaves/joins or gets kicked.
 author: unlucky4ever
 website: ${project.url}
 
-main: ${mainClass}
+main: com.unlucky4ever.customjoinmessage.CustomJoinMessage
 
 commands:
   cjm:
