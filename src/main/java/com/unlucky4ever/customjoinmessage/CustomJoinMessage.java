@@ -19,9 +19,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
-import org.mcstats.Metrics;
 
 import com.unlucky4ever.customjoinmessage.config.ConfigurationLoader;
+import com.unlucky4ever.customjoinmessage.extras.Metrics;
 import com.unlucky4ever.customjoinmessage.listeners.PlayerListener;
 
 public class CustomJoinMessage extends JavaPlugin {
