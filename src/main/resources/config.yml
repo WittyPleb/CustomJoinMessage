@@ -1,0 +1,23 @@
+# Configuration for CustomJoinMessage
+update:
+    check: true
+disable:
+    join-message: false
+    leave-message: false
+    kick-message: false
+use-groups: false
+custom:
+  default:
+    join-message: '%p has joined.'
+    leave-message: '%p has left.'
+    kick-message: '%p was kicked'
+  users:
+    8f2d51db-6818-4016-b06a-0d0df5fd4d7e:
+      join-message: '%p has joined.'
+      leave-message: '%p has left.'
+      kick-message: '%p was kicked'
+  groups:
+    admin:
+      join-message: '%p has joined.'
+      leave-message: '%p has left.'
+      kick-message: '%p was kicked'
