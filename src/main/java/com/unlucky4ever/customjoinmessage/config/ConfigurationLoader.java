@@ -25,7 +25,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 /**
  * Manages the configuration for the plugin
- * 
+ *
  * @since 2.0.0
  * @author unlucky4ever
  * @version 2.0.0
@@ -44,7 +44,7 @@ public class ConfigurationLoader {
 
 	/**
 	 * Verifies the values within the configuration, and the file itself
-	 * 
+	 *
 	 * @since 2.0.0
 	 * @version 2.0.0
 	 */
@@ -73,7 +73,7 @@ public class ConfigurationLoader {
 
 	/**
 	 * Saves the current configuration from memory
-	 * 
+	 *
 	 * @since 2.0.0
 	 * @version 2.0.0
 	 */
@@ -88,10 +88,10 @@ public class ConfigurationLoader {
 
 	/**
 	 * Gets the configuration file for CustomJoinMessage
-	 * 
+	 *
 	 * @since 2.0.0
 	 * @version 2.0.0
-	 * 
+	 *
 	 * @return YamlConfiguration file, null if verifyConfig() has not been run
 	 */
 	public YamlConfiguration getConfig() {
@@ -100,10 +100,10 @@ public class ConfigurationLoader {
 
 	/**
 	 * Gets a string value from the config
-	 * 
+	 *
 	 * @since 1.3.0
 	 * @version 1.3.0
-	 * 
+	 *
 	 * @param path
 	 *            Path to string value
 	 * @return String value
@@ -114,10 +114,10 @@ public class ConfigurationLoader {
 
 	/**
 	 * Gets an int value from the config
-	 * 
+	 *
 	 * @since 2.0.0
 	 * @version 2.0.0
-	 * 
+	 *
 	 * @param path
 	 *            Path to int value
 	 * @return int value
@@ -128,10 +128,10 @@ public class ConfigurationLoader {
 
 	/**
 	 * Gets a boolean value from the config
-	 * 
+	 *
 	 * @since 2.0.0
 	 * @version 2.0.0
-	 * 
+	 *
 	 * @param path
 	 *            Path to boolean value
 	 * @return boolean value

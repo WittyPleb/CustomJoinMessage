@@ -82,7 +82,6 @@ public class CustomJoinMessage extends JavaPlugin {
 		// Schedule to check the version every 30 minutes for an update. This is to update the most recent
 		// version so if an admin reconnects they will be warned about newer versions.
 		this.getServer().getScheduler().runTask(this, new Runnable() {
-			@Override
 			public void run() {
 				// Programmatically set the default perission value because Bukkit doesn't handle plugin.yml properly for Load order STARTUP plugins
 				org.bukkit.permissions.Permission perm = getServer().getPluginManager().getPermission("cjm.update");
@@ -96,7 +95,6 @@ public class CustomJoinMessage extends JavaPlugin {
 				perm.setDescription("Allows a user or the console to check for CustomJoinMessage updates.");
 				
 				getServer().getScheduler().runTaskTimerAsynchronously(plugin, new Runnable() {
-					@Override
 					public void run() {
 						if (getServer().getConsoleSender().hasPermission("cjm.update") && cloader.getBoolean("update.check")) {
 							try {
