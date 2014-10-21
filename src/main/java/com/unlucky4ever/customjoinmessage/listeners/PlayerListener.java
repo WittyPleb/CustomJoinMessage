@@ -27,7 +27,7 @@ public class PlayerListener implements Listener {
 			try {
 				if (plugin.newVersion > plugin.currentVersion) {
 					player.sendMessage("CustomJoinMessage " +  plugin.newVersion + " is out! You are running " + plugin.currentVersion);
-					player.sendMessage("Update Vault at: http://dev.bukkit.org/server-mods/customjoinmessage");
+					player.sendMessage("Update CustomJoinMessage at: http://dev.bukkit.org/server-mods/customjoinmessage");
 				}
 			} catch (Exception e) {
 				// ignore exception
